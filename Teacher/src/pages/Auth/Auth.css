@@ -1,0 +1,43 @@
+.auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0px;
+    flex-direction: column;
+
+}
+
+.card {
+    padding: 30px;
+    width: 400px;
+    border: 2px solid grey;
+    box-shadow: -10px 20px 5px lightgray;
+}
+
+.auth-container h2 {
+    color: blueviolet;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.auth-container p {
+    color: rgb(226, 66, 114);
+    text-align: center;
+}
+
+.auth-container input {
+    border: 2px solid rgb(121, 20, 142);
+    border-bottom: 2px solid teal;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0%;
+    width: 350px;
+}
+
+.auth-container button {
+    margin-top: 20px;
+    border: none;
+    background-color: rgb(161, 120, 225);
+
+}

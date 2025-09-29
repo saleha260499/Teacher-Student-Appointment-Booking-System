@@ -1,0 +1,28 @@
+.teacher-details h5 {
+    color: darkmagenta;
+    font-weight: 600;
+}
+
+.booking-section {
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.booking-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    object-fit: cover;
+}
+
+.btn-primary {
+    background-color: darkmagenta;
+    border-color: darkmagenta;
+}
+
+.btn-primary:hover {
+    background-color: purple;
+    border-color: purple;
+}

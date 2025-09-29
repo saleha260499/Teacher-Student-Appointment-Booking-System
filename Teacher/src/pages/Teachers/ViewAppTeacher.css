@@ -1,0 +1,41 @@
+.availability-btn {
+    padding: 0.75rem 1.5rem;
+    /* px-4 py-2 */
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    font-weight: 600;
+    /* font-semibold */
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+/* Available state */
+.availability-btn.available {
+    background-color: #aae7c0;
+    /* green-600 */
+}
+
+.availability-btn.available:hover {
+    background-color: #8bdda9;
+    /* green-700 */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(22, 163, 74, 0.4);
+}
+
+/* Not available state */
+.availability-btn.not-available {
+    background-color: #de9e9e;
+    /* red-600 */
+}
+
+.availability-btn.not-available:hover {
+    background-color: #df8e8e;
+    /* red-700 */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(220, 38, 38, 0.4);
+}

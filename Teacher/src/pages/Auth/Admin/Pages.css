@@ -1,0 +1,51 @@
+.admin-teachers-container {
+    padding: 20px;
+}
+
+.admin-teachers-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: indigo;
+    margin-bottom: 20px;
+}
+
+.admin-teachers-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.admin-teachers-table th {
+    background-color: indigo;
+    color: white;
+    text-align: left;
+    padding: 12px 15px;
+    font-weight: 600;
+}
+
+.admin-teachers-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.95rem;
+}
+
+.admin-teachers-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.admin-teachers-table tr:hover {
+    background-color: #f1f1f1;
+    transition: background 0.3s ease;
+}
+
+.admin-status-yes {
+    color: green;
+    font-weight: bold;
+}
+
+.admin-status-no {
+    color: red;
+    font-weight: bold;
+}

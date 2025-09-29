@@ -1,0 +1,41 @@
+.teacher-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.teacher-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.teacher-card h2 {
+    margin-bottom: 20px;
+}
+
+.teacher-card input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.teacher-card button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkmagenta;
+    color: white;
+    cursor: pointer;
+}
+
+.error-text {
+    color: red;
+    margin-bottom: 10px;
+}
