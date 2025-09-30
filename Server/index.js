@@ -136,6 +136,15 @@ app.post("/appointments", async (req, res) => {
         const endOfDay = new Date(date);
         endOfDay.setHours(23, 59, 59, 999);
 
+        // Check if teacher already has an appointment at this exact date & time
+        const conflict = await Appointment.findOne({
+            dateTime: dateTime
+        });
+
+        if (conflict) {
+            return res.status(400).json({ message: "You have another appointment at same time." });
+        }
+
 
         // Check existing appointment
         const existing = await Appointment.findOne({
@@ -191,8 +200,8 @@ app.get("/appointments", async (req, res) => {
         }
 
         const appointments = await Appointment.find({ studentEmail }).sort({ dateTime: 1 });
-
         res.json(appointments);
+
     } catch (err) {
         console.error("❌ Error fetching appointments:", err);
         res.status(500).json({ message: "Server error" });
@@ -204,13 +213,18 @@ app.delete("/appointments/:id", async (req, res) => {
     try {
         const { id } = req.params;
 
-        if (!id) return res.status(400).json({ message: "Appointment ID required" });
+        if (!id) {
+            return res.status(400).json({ message: "Appointment ID required" });
+        }
 
         const deleted = await Appointment.findByIdAndDelete(id);
 
-        if (!deleted) return res.status(404).json({ message: "Appointment not found" });
+        if (!deleted) {
+            return res.status(404).json({ message: "Appointment not found" });
+        }
 
         res.json({ message: "Appointment cancelled successfully!" });
+
     } catch (err) {
         console.error("❌ Error deleting appointment:", err);
         res.status(500).json({ message: "Server error" });
@@ -224,32 +238,34 @@ app.put("/appointments/:id", async (req, res) => {
         const { id } = req.params;
         const { dateTime } = req.body;
 
-        const date = new Date(dateTime);
-        if (isNaN(date)) return res.status(400).json({ message: "Invalid date" });
+        if (!dateTime) {
+            return res.status(400).json({ message: "New dateTime is required" });
+        }
 
-        // Find the appointment by ID
+        const newDate = new Date(dateTime);
+        if (isNaN(newDate.getTime())) {
+            return res.status(400).json({ message: "Invalid dateTime format" });
+        }
+
+        // Find the current appointment
         const appointment = await Appointment.findById(id);
-        if (!appointment) return res.status(404).json({ message: "Appointment not found" });
+        if (!appointment) {
+            return res.status(404).json({ message: "Appointment not found" });
+        }
 
-        // Optional: check if new date conflicts with existing appointment
-        const startOfDay = new Date(date);
-        startOfDay.setHours(0, 0, 0, 0);
-        const endOfDay = new Date(date);
-        endOfDay.setHours(23, 59, 59, 999);
-
-        const existing = await Appointment.findOne({
+        // Check for conflicts: same teacher, same exact hour, excluding current appointment
+        const conflict = await Appointment.findOne({
             teacherId: appointment.teacherId,
-            studentEmail: appointment.studentEmail,
-            dateTime: { $gte: startOfDay, $lte: endOfDay },
+            dateTime: newDate,
             _id: { $ne: id } // exclude current appointment
         });
 
-        if (existing) {
-            return res.status(400).json({ message: "You already have an appointment with this teacher on this day." });
+        if (conflict) {
+            return res.status(400).json({ message: "This time slot is already booked with this teacher." });
         }
 
-        // Update the appointment date
-        appointment.dateTime = date;
+        // Update appointment
+        appointment.dateTime = newDate;
         await appointment.save();
 
         res.json({ message: "Appointment rescheduled successfully!", appointment });

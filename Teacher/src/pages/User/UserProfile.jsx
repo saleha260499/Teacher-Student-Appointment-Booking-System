@@ -8,38 +8,22 @@ const UserProfile = () => {
     useEffect(() => {
         if (!email) return;
 
-        // Fetch user data from backend
         axios.get(`http://localhost:3001/api/user/${email}`)
             .then(res => setUser(res.data))
             .catch(err => console.error('Error fetching user data:', err));
     }, [email]);
 
     if (!user) {
-        return <p className="text-center mt-5">Loading user data...</p>;
+        return <p className="text-center mt-5" style={{ color: 'black' }}>Loading user data...</p>;
     }
 
     return (
         <div className="container mt-5">
-            <h4 className="text-center">Manage your account & appointments</h4>
-            <div className="row mt-3">
-                <div className="col-md-4 text-center">
-                    <img src={user.profilePic || null} alt="userPic" className='card p-2' width={200} />
-                </div>
-                <div className="col-md-6 mt-3">
-                    <div className="user-container mb-3">
-                        <h6>Name: {user.name}</h6>
-                        <h6>Gender: {user.gender}</h6>
-                        <h6>Date of birth: {user.dob}</h6>
-                        <h6>Phone: {user.phone}</h6>
-                        <h6>Address: {user.address}</h6>
-                        <h6>Email: {user.email}</h6>
-                    </div>
-                </div>
-            </div>
+            <div className="card p-4 shadow-sm mx-auto text-center" style={{ maxWidth: '400px', backgroundColor: '#fff', color: 'black' }}>
+                <h6 style={{ color: 'black', marginBottom: '20px' }}>Email: {user.email}</h6>
 
-            <div className="button-container text-center mt-5">
-                <button className='btn btn-success'>
-                    <i className='fa-solid fa-list'></i> Appointments
+                <button className="btn btn-warning px-4 py-2">
+                    <i className="fa-solid fa-list me-2"></i> Appointments
                 </button>
             </div>
         </div>
