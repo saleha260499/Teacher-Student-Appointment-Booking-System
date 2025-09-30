@@ -9,19 +9,18 @@ Features
 - User registration & login with authentication
 - Book, update, and cancel appointments
 - View upcoming and past appointments
-- Role-based access for users and admins (if implemented)
-- Email/SMS notifications (optional)
+- Role-based access for users, teachers, and admin
 - RESTful APIs with secure backend integration
 - Responsive, mobile-friendly interface
 Tech Stack
 - Frontend: React, Redux (if used), Axios
 - Backend: Node.js, Express.js
 - Database: MongoDB (Mongoose ODM)
-- Authentication: JWT / OAuth (if implemented)
-- Styling: CSS / Tailwind / Material-UI (depending on your setup)
+
+- Styling: CSS / Tailwind / Material-UI 
 Installation
 1. Clone the repository
-git clone https://github.com/your-username/appointment_mern.git
+git clone https://github.com/saleha260499/appointment_mern.git
 cd appointment_mern
 2. Install backend dependencies
 cd server
@@ -37,8 +36,8 @@ Otherwise, run backend and frontend separately:
 cd server
 npm start
 # In another terminal
-cd client
-npm start
+cd teacher
+npm run dev
 Environment Variables
 Create a .env file in the server directory with the following variables:
 MONGO_URI=your_mongodb_connection_string
@@ -60,4 +59,4 @@ Contributions are welcome!
 License
 This project is licensed under the MIT License.
 Contact
-For questions or feedback, reach out to [Your Name] (youremail@example.com).
+For questions or feedback, reach out to [Salehabanu] (salehapathan909@gmail.com).
