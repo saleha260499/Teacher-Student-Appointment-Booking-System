@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import axios from "axios";
-import "./TeacherLogin.css";
+import "./teacherLogin.css";
 
 export default function TeacherLogin() {
     const [email, setEmail] = useState("");
