@@ -18,7 +18,7 @@ const ViewAppointmentsTeacher = () => {
             if (!teacherEmail) return setLoading(false);
 
             const res = await axios.get(
-                `http://localhost:3001/viewteacherappointment?teacherEmail=${teacherEmail}`
+                "https://teacher-student-appointment-booking-hviw.onrender.com/viewteacherappointment?teacherEmail=${teacherEmail}"
             );
             setAppointments(res.data);
         } catch (err) {
@@ -35,7 +35,7 @@ const ViewAppointmentsTeacher = () => {
         // Fetch teacher data for availability when component mounts
         const teacherEmail = localStorage.getItem("teacher");
         if (!teacherEmail) return;
-        axios.get(`http://localhost:3001/teacher/${teacherEmail}`)
+        axios.get("https://teacher-student-appointment-booking-hviw.onrender.com/teacher/${teacherEmail}")
             .then(res => setAvailable(res.data.available))
             .catch(err => console.error("Error fetching teacher availability:", err));
     }, []);
@@ -44,7 +44,7 @@ const ViewAppointmentsTeacher = () => {
         try {
             const teacherEmail = localStorage.getItem("teacher");
             const newStatus = !available;
-            await axios.put(`http://localhost:3001/teacher/${teacherEmail}/availability`, {
+            await axios.put("https://teacher-student-appointment-booking-hviw.onrender.com/teacher/${teacherEmail}/availability", {
                 available: newStatus
             });
             setAvailable(newStatus);
@@ -59,7 +59,7 @@ const ViewAppointmentsTeacher = () => {
         if (!actionId || !actionType) return;
 
         try {
-            await axios.put(`http://localhost:3001/viewteacherappointment/${actionId}`, {
+            await axios.put("https://teacher-student-appointment-booking-hviw.onrender.com/viewteacherappointment/${actionId}", {
                 status: actionType,
             });
             alert(`Appointment ${actionType}d successfully!`);

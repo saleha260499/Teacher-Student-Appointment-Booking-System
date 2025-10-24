@@ -13,7 +13,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:3001/register', { name, email, password });
+            const res = await axios.post("https://teacher-student-appointment-booking-hviw.onrender.com/register", { name, email, password });
             console.log("register==>", res.data);
             toast.success("Registered success");
             setName("");

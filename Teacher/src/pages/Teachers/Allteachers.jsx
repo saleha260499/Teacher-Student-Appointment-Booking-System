@@ -9,7 +9,7 @@ const Allteachers = () => {
     useEffect(() => {
         const fetchTeachers = async () => {
             try {
-                const res = await axios.get("http://localhost:3001/allteachers");
+                const res = await axios.get("https://teacher-student-appointment-booking-hviw.onrender.com/allteachers");
                 setTeachers(res.data);
             } catch (err) {
                 console.error("Failed to fetch teachers:", err);

@@ -18,9 +18,9 @@ const AdminDashboard = () => {
         try {
             // 👉 Replace with your backend routes
             const [teachersRes, studentsRes, appointmentsRes] = await Promise.all([
-                axios.get("http://localhost:3001/admin/teachers"),
-                axios.get("http://localhost:3001/admin/students"),
-                axios.get("http://localhost:3001/admin/appointments"),
+                axios.get("https://teacher-student-appointment-booking-hviw.onrender.com/admin/teachers"),
+                axios.get("https://teacher-student-appointment-booking-hviw.onrender.com/admin/students"),
+                axios.get("https://teacher-student-appointment-booking-hviw.onrender.com/admin/appointments"),
             ]);
 
 

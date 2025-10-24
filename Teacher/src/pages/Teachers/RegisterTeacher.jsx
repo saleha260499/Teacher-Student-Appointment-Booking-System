@@ -21,7 +21,7 @@ const TeacherRegister = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:3001/teachers", {
+            const res = await axios.post("https://teacher-student-appointment-booking-hviw.onrender.com/teachers", {
                 name,
                 subject,
                 degree,

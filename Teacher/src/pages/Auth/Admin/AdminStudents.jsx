@@ -12,7 +12,7 @@ const AdminStudents = () => {
 
     const fetchStudents = async () => {
         try {
-            const res = await axios.get("http://localhost:3001/students"); // backend API
+            const res = await axios.get("https://teacher-student-appointment-booking-hviw.onrender.com/students"); // backend API
             setStudents(res.data);
         } catch (err) {
             console.error("Error fetching students:", err);

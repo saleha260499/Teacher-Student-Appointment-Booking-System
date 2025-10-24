@@ -11,7 +11,7 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:3001/login', { email, password })
+        axios.post('https://teacher-student-appointment-booking-hviw.onrender.com/login', { email, password })
             .then(result => {
                 console.log(result.data); // log only the data
                 if (result.data === "success") {

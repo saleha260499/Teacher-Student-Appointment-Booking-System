@@ -22,7 +22,7 @@ const ViewAppointments = () => {
             if (!studentEmail) return setLoading(false);
 
             const res = await axios.get(
-                `http://localhost:3001/appointments?studentEmail=${studentEmail}`
+                "https://teacher-student-appointment-booking-hviw.onrender.com/appointments?studentEmail=${studentEmail}"
             );
             setAppointments(res.data);
         } catch (err) {
@@ -35,7 +35,7 @@ const ViewAppointments = () => {
 
     const handleCancel = async (id) => {
         try {
-            await axios.delete(`http://localhost:3001/appointments/${id}`);
+            await axios.delete("https://teacher-student-appointment-booking-hviw.onrender.com/appointments/${id}");
             alert("Appointment cancelled!");
             fetchAppointments();
         } catch (err) {
@@ -50,7 +50,7 @@ const ViewAppointments = () => {
         if (!newDateTime) return alert("Please select a date and time");
 
         try {
-            await axios.put(`http://localhost:3001/appointments/${rescheduleId}`, {
+            await axios.put("https://teacher-student-appointment-booking-hviw.onrender.com/appointments/${rescheduleId}", {
                 dateTime: newDateTime.toISOString(),
             });
             alert("Appointment rescheduled!");

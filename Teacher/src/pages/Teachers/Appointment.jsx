@@ -15,7 +15,7 @@ const Appointment = () => {
     useEffect(() => {
         if (!id) return;
 
-        axios.get(`http://localhost:3001/teacher/${id}`)
+        axios.get("https://teacher-student-appointment-booking-hviw.onrender.com/teacher/${id}")
             .then(res => setTeacher(res.data))
             .catch(err => console.error("Error fetching teacher data:", err));
     }, [id]);
@@ -39,7 +39,7 @@ const Appointment = () => {
         }
 
         try {
-            const response = await axios.post("http://localhost:3001/appointments", {
+            const response = await axios.post("https://teacher-student-appointment-booking-hviw.onrender.com/appointments", {
                 teacherId: id,
                 studentEmail,
                 dateTime: selectedDateTime.toISOString(),

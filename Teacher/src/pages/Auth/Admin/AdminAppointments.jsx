@@ -11,7 +11,7 @@ const AdminAppointments = () => {
 
     const fetchAppointments = async () => {
         try {
-            const res = await axios.get("http://localhost:3001/admin/appointments"); // backend API
+            const res = await axios.get("https://teacher-student-appointment-booking-hviw.onrender.com/admin/appointments"); // backend API
             setAppointments(res.data);
         } catch (err) {
             console.error("Error fetching appointments:", err);

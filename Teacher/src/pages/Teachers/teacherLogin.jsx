@@ -17,7 +17,7 @@ export default function TeacherLogin() {
         setError("");
 
         try {
-            const res = await axios.post("http://localhost:3001/teacher-login", { email, password });
+            const res = await axios.post("https://teacher-student-appointment-booking-hviw.onrender.com/teacher-login", { email, password });
 
             if (res.data?.message === "success") {
                 // Save teacher info to localStorage

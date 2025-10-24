@@ -8,7 +8,7 @@ const UserProfile = () => {
     useEffect(() => {
         if (!email) return;
 
-        axios.get(`http://localhost:3001/api/user/${email}`)
+        axios.get("https://teacher-student-appointment-booking-hviw.onrender.com/api/user/${email}")
             .then(res => setUser(res.data))
             .catch(err => console.error('Error fetching user data:', err));
     }, [email]);

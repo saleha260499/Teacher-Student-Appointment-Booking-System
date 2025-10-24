@@ -18,13 +18,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// --- MongoDB Connection ---
-const MONGO_URI = "mongodb://localhost:27017";
-
-mongoose
-    .connect(MONGO_URI)
+// // --- MongoDB Connection ---
+// const MONGO_URI = "mongodb://localhost:27017";
+mongoose.connect("mongodb+srv://saleha260499:Saleha786092@cluster0.8br8xeh.mongodb.net/appointment?retryWrites=true&w=majority&appName=Cluster0")
     .then(() => console.log("✅ MongoDB connected"))
-    .catch((err) => console.error("❌ MongoDB error:", err));
+    .catch(err => console.log("❌ MongoDB connection error:", err));
 
 // --- Routes ---
 app.post("/login", (req, res) => {
