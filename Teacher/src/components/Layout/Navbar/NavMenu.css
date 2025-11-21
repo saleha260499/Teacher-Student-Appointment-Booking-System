@@ -1,0 +1,49 @@
+/* Ensure navbar toggler works properly on small screens */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+/* Navbar collapse for mobile */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: #f8f9fa;
+        /* light background */
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-select {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .d-flex {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Optional: style hover for mobile */
+.nav-link:hover,
+.btn:hover,
+.form-select:hover {
+    opacity: 0.9;
+}
+
+/* Adjust Book Appointment button on mobile */
+@media (max-width: 576px) {
+    .btn-success {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}

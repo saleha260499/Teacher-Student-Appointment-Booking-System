@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Library",
+        "icon": "fa-solid fa-book"
+    },
+    {
+        "title": "Computer Lab",
+        "icon": "fa-solid fa-computer"
+    },
+    {
+        "title": "Science Lab",
+        "icon": "fa-solid fa-flask"
+    },
+    {
+        "title": "Gym",
+        "icon": "fa-solid fa-dumbbell"
+    },
+    {
+        "title": "Free WIFI",
+        "icon": "fa-solid fa-wifi"
+    },
+    {
+        "title": "Robotics",
+        "icon": "fa-solid fa-robot"
+    },
+    {
+        "title": "Music-class",
+        "icon": "fa-solid fa-music"
+    },
+    {
+        "title": "Cafeteria",
+        "icon": "fa-solid fa-coffee"
+    }
+]

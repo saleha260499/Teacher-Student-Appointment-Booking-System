@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Nikki Johnson",
+        "subject": "maths",
+        "pic": "https://static.thenounproject.com/png/1743560-200.png",
+        "degree": "PhD in maths",
+        "about": "lorem50",
+        "experience": "2 years",
+        "available": true
+    },
+    {
+        "id": 2,
+        "name": "Thomas ken",
+        "subject": "science",
+        "pic": "https://static.thenounproject.com/png/1743560-200.png",
+        "degree": "PhD in Science",
+        "about": "lorem50",
+        "experience": "1 years",
+        "available": false
+    }
+]
