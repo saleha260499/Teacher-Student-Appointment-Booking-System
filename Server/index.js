@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cors());
 
 // --- MongoDB Connection ---
-const MONGO_URI = "mongodb://localhost:27017";
+const MONGO_URI = "mongodb+srv://saleha_user:Saleha123@cluster0.mindwzn.mongodb.net/Appointment";
 
 mongoose
     .connect(MONGO_URI)
